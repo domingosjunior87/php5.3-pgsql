@@ -4,6 +4,14 @@ MAINTAINER Domingos Coelho <domingosjunior87@gmail.com>
 
 COPY docker-php-* /usr/local/bin/
 
+RUN chmod a+x /usr/local/bin/docker-php-ext-configure
+
+RUN chmod a+x /usr/local/bin/docker-php-ext-install
+
+RUN chmod a+x /usr/local/bin/docker-php-ext-configure
+
+RUN chmod a+x /usr/local/bin/docker-php-ext-enable
+
 RUN apt-get update \
  && apt-get install --no-install-recommends -y \
  	libxml2-dev \
@@ -12,14 +20,14 @@ RUN apt-get update \
     libmcrypt-dev \
     libpng12-dev \
     libpq-dev \
-#    libmagickwand-dev \
-#    libmagickwand-6.q16-dev \
+    libmagickwand-dev \
+    libmagickwand-6.q16-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && mkdir /usr/include/freetype2/freetype \ 
  && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h \
  && chmod -R 777 /usr/local/bin \
-# && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+ && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
  && docker-php-ext-install mbstring pgsql pdo_pgsql
 
 EXPOSE 80

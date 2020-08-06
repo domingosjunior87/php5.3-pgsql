@@ -19,7 +19,7 @@ RUN apt-get update \
  && mkdir /usr/include/freetype2/freetype \ 
  && ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h \
  && chmod -R 777 /usr/local/bin \
- && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
- && docker-php-ext-install gd mbstring pgsql pdo_pgsql
+# && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+ && docker-php-ext-install mbstring pgsql pdo_pgsql
 
 EXPOSE 80

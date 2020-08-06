@@ -28,9 +28,9 @@ Imagem Docker para projetos legados que utilizam o PHP 5.3.29 e as extensões pa
     - pcre
     - PDO
     - pdo_mysql
-	- pdo_pgsql
+    - pdo_pgsql
     - pdo_sqlite
-	- pgsql
+    - pgsql
     - Phar
     - posix
     - readline

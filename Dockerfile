@@ -4,17 +4,9 @@ MAINTAINER Domingos Coelho <domingosjunior87@gmail.com>
 
 COPY docker-php-* /usr/local/bin/
 
-RUN chmod a+x /usr/local/bin/docker-php-ext-configure
-
-RUN chmod a+x /usr/local/bin/docker-php-ext-install
-
-RUN chmod a+x /usr/local/bin/docker-php-ext-configure
-
-RUN chmod a+x /usr/local/bin/docker-php-ext-enable
-
 RUN apt-get update \
- && apt-get install --no-install-recommends -y \
- 	libxml2-dev \
+ && apt-get install -y \
+ 	libpq5 \
     libpq-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \

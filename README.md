@@ -2,7 +2,7 @@
 Imagem Docker para projetos legados que utilizam o PHP 5.3.29 e as extensões para o Postgres
 
    -  Debian Jessie
-   -  PHP-FPM
+   -  Apache
    -  PHP 5.3.29
 
 ## Extensões PHP instaladas e habilitadas
@@ -14,6 +14,7 @@ Imagem Docker para projetos legados que utilizam o PHP 5.3.29 e as extensões pa
     - ereg
     - fileinfo
     - filter
+    - ftp
     - gd
     - hash
     - iconv
@@ -21,13 +22,15 @@ Imagem Docker para projetos legados que utilizam o PHP 5.3.29 e as extensões pa
     - libxml
     - mbstring
     - mysql
+    - mysqli
     - mysqlnd
     - openssl
     - pcre
     - PDO
-    - pdo_pgsql
+    - pdo_mysql
+	- pdo_pgsql
     - pdo_sqlite
-    - pgsql
+	- pgsql
     - Phar
     - posix
     - readline
